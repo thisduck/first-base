@@ -1,0 +1,19 @@
+%h1 Players List
+
+= link_to "New Player", new_player_url
+
+%table.ui.celled.table
+  %thead
+    %tr
+      %th ID
+      %th Name
+      %th Gender
+      %th Email
+  %tbody
+    - @players.each do |player|
+      %tr
+        %td= link_to player.id, edit_player_path(player)
+        %td= player.name
+        %td= player.gender
+        %td= player.email
+
